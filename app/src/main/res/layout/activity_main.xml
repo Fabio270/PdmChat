@@ -12,4 +12,9 @@
         android:layout_weight="1"
         tools:listitem="@layout/containerMessage" />
 
+    <Button
+        android:id="@+id/buttonSendMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_message" />
 </LinearLayout>

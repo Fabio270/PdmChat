@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PdmChat</string>
+    <string name="send_message">Mande uma mensagem</string>
 </resources>
