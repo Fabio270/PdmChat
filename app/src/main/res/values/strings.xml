@@ -4,4 +4,8 @@
     <string name="author">Author</string>
     <string name="time">Time</string>
     <string name="message">Message</string>
+    <string name="label_author">Author:</string>
+    <string name="label_message">Message:</string>
+    <string name="message_limit">Message (150 char limit)</string>
+    <string name="send">Send</string>
 </resources>

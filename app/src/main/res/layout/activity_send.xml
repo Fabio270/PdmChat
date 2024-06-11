@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SendMessageActivity">
+
+    <TextView
+        android:id="@+id/AuthorLabelTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_author"
+        android:labelFor="@id/AuthorEt"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/AuthorEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/author" />
+
+    <TextView
+        android:id="@+id/MessageLabelTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_message"
+        android:labelFor="@id/AuthorEt"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/messageEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/message_limit"
+        android:maxLength="150" />
+
+    <Button
+        android:id="@+id/SendSubmitBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send" />
+</LinearLayout>
