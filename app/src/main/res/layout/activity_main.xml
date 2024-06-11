@@ -6,14 +6,14 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMessages"
+        android:id="@+id/MessagesRv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:listitem="@layout/container_message" />
 
     <Button
-        android:id="@+id/buttonSendMessage"
+        android:id="@+id/SendBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/send_message" />
