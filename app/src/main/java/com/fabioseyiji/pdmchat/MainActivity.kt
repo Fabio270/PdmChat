@@ -37,9 +37,9 @@ class MainActivity : AppCompatActivity() {
     private fun displayMessages() {
         db.addChildEventListener(object : ChildEventListener {
             override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
-                val message = snapshot.getValue(Message::class.java)
-                if (message != null) {
-                    messages.add(message)
+                val msg = snapshot.getValue(Message::class.java)
+                if (msg != null) {
+                    messages.add(msg)
                     adapter.notifyItemInserted(messages.size - 1)
                 }
             }
