@@ -3,27 +3,51 @@ package com.fabioseyiji.pdmchat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.fabioseyiji.pdmchat.databinding.ActivityMainBinding
+import com.google.firebase.database.*
+
 
 class MainActivity : AppCompatActivity() {
+
+    private val amb: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+
     private lateinit var db: DatabaseReference
     private val messages = mutableListOf<Message>()
     private lateinit var adapter: MessengerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(amb.root)
 
         db = FirebaseDatabase.getInstance().reference.child("messages")
 
         adapter = MessengerAdapter(messages)
-        recyclerViewMessages.layoutManager = LinearLayoutManager(this)
-        recyclerViewMessages.adapter = adapter
+        amb.MessagesRv.layoutManager = LinearLayoutManager(this)
+        amb.MessagesRv.adapter = adapter
 
-        buttonSendMessage.setOnClickListener {
-            startActivity(Intent(this, SendMessageActivity::class.java))
+        amb.SendBt.setOnClickListener {
+            startActivity(Intent(this, SendActivity::class.java))
         }
 
-        loadMessages()
+        displayMessages()
+    }
+
+    private fun displayMessages() {
+        db.addChildEventListener(object : ChildEventListener {
+            override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
+                val message = snapshot.getValue(Message::class.java)
+                if (message != null) {
+                    messages.add(message)
+                    adapter.notifyItemInserted(messages.size - 1)
+                }
+            }
+
+            override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {}
+            override fun onChildRemoved(snapshot: DataSnapshot) {}
+            override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {}
+            override fun onCancelled(error: DatabaseError) {}
+        })
     }
 }
