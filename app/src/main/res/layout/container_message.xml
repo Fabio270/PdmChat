@@ -2,16 +2,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="#AEC6CF"
+    >
 
     <TextView
         android:id="@+id/AuthorTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="@string/author" />
 
     <TextView
         android:id="@+id/TimeTv"
+        android:textStyle="italic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time" />

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "687373188318",
+    "project_id": "pdmchat-ac45e",
+    "storage_bucket": "pdmchat-ac45e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687373188318:android:687b0c63503ec0af83564f",
+        "android_client_info": {
+          "package_name": "com.fabioseyiji.pdmchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN7OKgUDzMNzMD6WwZy409QOAgP-TW7GM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

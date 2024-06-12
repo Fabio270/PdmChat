@@ -11,13 +11,18 @@
         android:layout_height="wrap_content"
         android:text="@string/label_author"
         android:labelFor="@id/AuthorEt"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/AuthorEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/author" />
+        android:hint="@string/author"
+        android:minHeight="48dp"
+        android:inputType="text"
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/MessageLabelTv"
@@ -25,6 +30,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_message"
         android:labelFor="@id/AuthorEt"
+        android:textStyle="bold"
         android:textSize="20sp" />
 
     <EditText
@@ -32,7 +38,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/message_limit"
-        android:maxLength="150" />
+        android:maxLength="150"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/SendSubmitBt"
